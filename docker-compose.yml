@@ -1,0 +1,26 @@
+version: '3.5'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    environment:
+      - DB_DRIVER=postgres
+      - DB_HOST=db
+      - DB_PORT=5432
+      - DB_NAME=go_product
+      - DB_USERNAME=root
+      - DB_PASSWORD=secret
+    restart: always
+
+  db:
+    image: postgres:13
+    environment:
+      - POSTGRES_DB=go_product
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=secret
+    restart: always
