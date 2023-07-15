@@ -9,18 +9,77 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
         .container {
             max-width: 500px;
+            margin-top: 5rem;
+            background-color: #ffffff;
+            padding: 2rem;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .container h4 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .container p {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .container .alert-success {
+            margin-bottom: 1.5rem;
+        }
+
+        .container .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .container .form-group label {
+            font-weight: bold;
+        }
+
+        .container .form-group input {
+            width: 100%;
+            padding: 8px;
+            font-size: 16px;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .container .form-group .invalid-feedback {
+            color: #dc3545;
+        }
+
+        .container .btn-success {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 4px;
+        }
+
+        .container .btn-success:hover {
+            background-color: #28a745;
+            border-color: #28a745;
+        }
+
+        .container center {
+            margin-top: 1.5rem;
         }
     </style>
 </head>
 <body>
-    
-    <div class="container mt-5">
+    <div class="container">
         <form action="/register" method="post">
 
             <h4>SIGN UP</h4>
-            <p>Silahkan isi formulir dibawah untuk mendaftar</p>
+            <p>Silahkan isi formulir di bawah untuk mendaftar</p>
             <hr/>
 
             {{ if .pesan }}
@@ -31,35 +90,35 @@
             {{ end }}
 
             <div class="form-group">
-                <label for="">Nama Lengkap</label>
-                <input type="text" name="name"  value="{{ .user.Name }}" class="form-control {{ if .validation.Name }} is-invalid {{ end }}">
+                <label for="name">Nama Lengkap</label>
+                <input type="text" name="name" value="{{ .user.Name }}" class="form-control {{ if .validation.Name }} is-invalid {{ end }}">
                 <div class="invalid-feedback">
                     {{ .validation.Name }}
                 </div>
             </div>
             <div class="form-group">
-                <label for="">E-Email</label>
+                <label for="email">E-Email</label>
                 <input type="text" name="email" value="{{ .user.Email }}" class="form-control {{ if .validation.Email }} is-invalid {{ end }}">
                 <div class="invalid-feedback">
                     {{ .validation.Email }}
                 </div>
             </div>
             <div class="form-group">
-                <label for="">Username</label>
+                <label for="username">Username</label>
                 <input type="text" name="username" value="{{ .user.Username }}" class="form-control {{ if .validation.Username }} is-invalid {{ end }}">
                 <div class="invalid-feedback">
                     {{ .validation.Username }}
                 </div>
             </div>
             <div class="form-group">
-                <label for="">Password</label>
-                <input type="password" name="password"  class="form-control {{ if .validation.Password }} is-invalid {{ end }}">
+                <label for="password">Password</label>
+                <input type="password" name="password" class="form-control {{ if .validation.Password }} is-invalid {{ end }}">
                 <div class="invalid-feedback">
                     {{ .validation.Password }}
                 </div>
             </div>
             <div class="form-group">
-                <label for="">Konfirmasi Password</label>
+                <label for="cpassword">Konfirmasi Password</label>
                 <input type="password" name="cpassword" class="form-control {{ if .validation.Cpassword }} is-invalid {{ end }}">
                 <div class="invalid-feedback">
                     {{ .validation.Cpassword }}

@@ -17,9 +17,10 @@
 
     <div class="container mt-5">
         <h3>Data Pasien</h3>
-        <a href="/pasien/add" class="btn btn-sm btn-primary">Tambah Data</a>
-        <a class="btn btn-primary" href="/logout" role="button" >LOGOUT</a>
-        <hr />
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <a href="/pasien/add" class="btn btn-sm btn-primary">Tambah Data</a>
+            <a class="btn btn-primary" href="/logout" role="button">Logout</a>
+        </div>
         <table class="table table-sriped table-hover">
             <thead>
                 <tr>
@@ -46,7 +47,7 @@
                     <td>
                         <a href="/pasien/edit?id={{.Id}}" class="btn btn-sm btn-warning">Edit</a>
                         <a href="/pasien/delete?id={{.Id}}"
-                            onclick="return confirm('Aapakah anda yakin ingin menghapus data?')"
+                            onclick="return confirm('Apakah anda yakin ingin menghapus data?')"
                             class="btn btn-sm btn-danger">Hapus</a>
                     </td>
                 </tr>

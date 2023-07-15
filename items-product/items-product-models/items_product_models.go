@@ -21,6 +21,12 @@ func GetPasien() ([]entities.Pasiens, error) {
 func CreatePasien(pasien *entities.Pasiens) error {
 	con := config.CreateCon()
 
+	if pasien.JenisKelamin == "1" {
+		pasien.JenisKelamin = "Laki - Laki"
+	} else {
+		pasien.JenisKelamin = "Perempuan"
+	}
+
 	_, err := con.Model(pasien).Insert()
 	if err != nil {
 		return err
@@ -44,6 +50,12 @@ func FindId(id int64, pasien *entities.Pasiens) error {
 
 func EditPasien(pasien entities.Pasiens) error {
 	con := config.CreateCon()
+
+	if pasien.JenisKelamin == "1" {
+		pasien.JenisKelamin = "Laki - Laki"
+	} else {
+		pasien.JenisKelamin = "Perempuan"
+	}
 
 	_, err := con.Model(&pasien).
 		WherePK().

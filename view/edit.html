@@ -16,6 +16,24 @@
         .container {
             max-width: 550px;
         }
+
+        .form-group label {
+            font-weight: bold;
+        }
+
+        .invalid-feedback {
+            color: red;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+
+        .btn-primary:hover {
+            background-color: #0069d9;
+            border-color: #0062cc;
+        }
     </style>
 </head>
 
@@ -96,7 +114,7 @@
 
             <div class="form-group">
                 <input type="hidden" name="id" value="{{ .pasien.Id }}">
-                <button class="btn btn-primary btn-block" type="submit">UBAH DATA</button>
+                <button class="btn btn-primary btn-block" type="submit">Ubah Data</button>
             </div>
         </form>
 

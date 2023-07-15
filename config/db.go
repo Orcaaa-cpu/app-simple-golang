@@ -20,6 +20,11 @@ func CreateCon() *pg.DB {
 	dbHost := os.Getenv("DB_HOST")
 	dbPort := os.Getenv("DB_PORT")
 	dbName := os.Getenv("DB_NAME")
+	// dbUsername := "postgres"
+	// dbPassword := "12345678"
+	// dbHost := "localhost"
+	// dbPort := "5432"
+	// dbName := "postgres"
 
 	opt := &pg.Options{
 		User:     dbUsername,
